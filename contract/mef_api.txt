@@ -1,0 +1,31 @@
+login
+post /v1/login
+
+management
+
+post /v1/student - enroll 
+post /v1/teacher - enroll
+
+put /v1/student/{id} - student details update
+put /v1/teacher/{id} - teacher "   "
+
+post /v1/session - session creation
+put /v1/session/{id} - session details update
+post /v1/session/{id}/topic - applicable for grammar class along time and slot, includes topic name and description
+
+teacher
+
+GET /v1/oneonone
+GET /v1/student/{sessionType} 
+POST /v1/config - meeting config
+POST /v1/leave
+PUT /v1/session/{id}/topic/{id} - recorded url/desc/topic_name/
+POST /v1/oneonone - activate the slot
+
+student
+
+POST /v1/oneonone - activate the slot
+POST /v1/leave
+GET /v1/teacher
+GET /v1/oneonone
+GET /v1/session/{type}

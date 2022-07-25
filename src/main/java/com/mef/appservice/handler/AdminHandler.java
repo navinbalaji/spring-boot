@@ -14,6 +14,14 @@ public class AdminHandler {
     public AdminHandler() {
     }
     public void addUser(User user){
-        userRepository.save(user);
+        try {
+
+            userRepository.save(user);
+            int a = 10/0;
+        }
+        catch (Exception ex){
+            //log exception
+            throw ex;
+        }
     }
 }
