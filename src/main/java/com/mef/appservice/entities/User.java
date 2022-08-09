@@ -1,5 +1,7 @@
 package com.mef.appservice.entities;
 
+import org.springframework.data.repository.CrudRepository;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
