@@ -49,13 +49,13 @@ PRIMARY KEY(id),
 FOREIGN KEY (userid) REFERENCES user(id)
 );
 
-CREATE TABLE student_leave
+CREATE TABLE user_leave
 (
 id int NOT NULL AUTO_INCREMENT,
-student_id int NOT NULL,
+user_id int NOT NULL,
 date DATE,
 PRIMARY KEY(id),
-FOREIGN KEY (student_id) REFERENCES student(id)
+FOREIGN KEY (user_id) REFERENCES user(id)
 );
 
 CREATE TABLE one_on_one

@@ -1,21 +1,19 @@
 package com.mef.appservice.entities;
 
-import org.springframework.data.repository.CrudRepository;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "student_leave")
-public class StudentLeave {
+@Table(name = "user_leave")
+public class UserLeave {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "student_id", nullable = false)
-    private Student student;
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
     @Column(name = "date")
     private LocalDate date;
@@ -28,16 +26,16 @@ public class StudentLeave {
         this.id = id;
     }
 
-    public Student getStudent() {
-        return student;
+    public User getUser() {
+        return user;
     }
 
-    public void setStudent(Student student) {
-        this.student = student;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public String getDate() {
+        return date.toString();
     }
 
     public void setDate(LocalDate date) {

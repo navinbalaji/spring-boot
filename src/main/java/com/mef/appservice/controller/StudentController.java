@@ -30,16 +30,6 @@ public class StudentController {
 
     }
 
-    @GetMapping("/v1/student/{id}/leave")
-    public void getLeave(@PathVariable long studentId){
-
-    }
-
-    @PostMapping("/v1/student/{id}/leave")
-    public void applyLeave(@PathVariable long studentId){
-
-    }
-
     @GetMapping("/v1/student/{id}/session")
     public void getSessionDetails(@PathVariable long studentId){
 
