@@ -39,11 +39,12 @@ public class UserController {
     @PostMapping("/{id}/leave")
     public ResponseEntity<String> applyLeave(@RequestBody LeaveDetails leaveDetails){
         try{
-            logger.info("applyLeave:"+leaveDetails.getId());
+            logger.info("applyLeave:"+leaveDetails.toString());
             userHandler.applyLeave(leaveDetails.getId(),leaveDetails.getLeaveDates());
             return ResponseEntity.status(HttpStatus.ACCEPTED).body(null);
         }
         catch (Exception ex){
+            logger.error("applyLeave: Exception occured "+leaveDetails.getId()+" --> "+ex.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
         }
 

@@ -30,4 +30,13 @@ public class LeaveDetails {
     public void setAllowedLeaves(int allowedLeaves) {
         this.allowedLeaves = allowedLeaves;
     }
+
+    @Override
+    public String toString() {
+        return "LeaveDetails{" +
+                "id=" + id +
+                ", leaveDates=" + leaveDates +
+                ", allowedLeaves=" + allowedLeaves +
+                '}';
+    }
 }

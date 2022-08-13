@@ -4,6 +4,11 @@ public class MEFClass {
     private String type;
     private String text;
 
+    public MEFClass(String type, String text) {
+        this.type = type;
+        this.text = text;
+    }
+
     public String getType() {
         return type;
     }

@@ -37,4 +37,14 @@ public class UserDetails {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    @Override
+    public String toString() {
+        return "UserDetails{" +
+                "name='" + name + '\'' +
+                ", avatar=" + avatar +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }
