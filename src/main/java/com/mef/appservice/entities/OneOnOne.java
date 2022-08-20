@@ -1,7 +1,5 @@
 package com.mef.appservice.entities;
 
-import org.springframework.data.repository.CrudRepository;
-
 import javax.persistence.*;
 import java.time.Instant;
 
@@ -12,6 +10,14 @@ public class OneOnOne {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "student_id", nullable = false)
+    private Student student;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "teacher_id", nullable = false)
+    private Teacher teacher;
 
     @Column(name = "slot_time")
     private Instant slotTime;
@@ -25,6 +31,22 @@ public class OneOnOne {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
     }
 
     public Instant getSlotTime() {
