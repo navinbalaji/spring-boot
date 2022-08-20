@@ -1,5 +1,5 @@
-FROM openjdk:8-jdk-alpine
-VOLUME /tmp
-ARG JAR_FILE
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+FROM arm64v8/openjdk:17-ea-16-jdk
+COPY appservice.01.jar app.jar
+CMD java -Dspring.profiles.active=cloud  -jar *.jar
+
+EXPOSE 8088
