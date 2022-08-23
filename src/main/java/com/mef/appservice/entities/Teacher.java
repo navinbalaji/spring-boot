@@ -25,6 +25,9 @@ public class Teacher {
     @Column(name = "meeting_id")
     private String meetingId;
 
+    public Teacher() {
+    }
+
     public Integer getId() {
         return id;
     }

@@ -23,7 +23,7 @@ public class UserController {
 
     private static final Logger logger = LogManager.getLogger(AdminController.class);
 
-    @GetMapping("/{id}/leave")
+    @GetMapping("/{userId}/leave")
     public ResponseEntity<LeaveDetails> getLeave(@PathVariable long userId){
         try{
             logger.info("GetLeave:"+userId);
@@ -36,7 +36,7 @@ public class UserController {
         }
     }
 
-    @PostMapping("/{id}/leave")
+    @PostMapping("/{userId}/leave")
     public ResponseEntity<String> applyLeave(@RequestBody LeaveDetails leaveDetails){
         try{
             logger.info("applyLeave:"+leaveDetails.toString());

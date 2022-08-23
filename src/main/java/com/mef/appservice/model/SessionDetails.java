@@ -37,4 +37,14 @@ public class SessionDetails {
     public void setMefClass(MEFClass mefClass) {
         this.mefClass = mefClass;
     }
+
+    @Override
+    public String toString() {
+        return "SessionDetails{" +
+                "id=" + id +
+                ", totalSession=" + totalSession +
+                ", completedSessions=" + completedSessions +
+                ", mefClass=" + mefClass +
+                '}';
+    }
 }

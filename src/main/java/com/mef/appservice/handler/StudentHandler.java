@@ -63,7 +63,7 @@ public class StudentHandler {
    public SessionDetails getSessionDetails(long studentId){
        SessionDetails sessionDetails = new SessionDetails();
        try{
-            Optional<OneOnOne> oneOnOne = oneOnOneRepository.findByStudentId(studentId);
+            Optional<OneOnOne> oneOnOne = oneOnOneRepository.findByStudent(studentId);
             if(oneOnOne.isPresent()){
                 Optional<List<OneOnOneSlot>> oneOnOneSlots = oneOnOneSlotRepository.findByOneOnOneId(oneOnOne.get().getId());
                 if(oneOnOneSlots.isPresent()){

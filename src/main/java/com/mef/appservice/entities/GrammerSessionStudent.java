@@ -16,6 +16,9 @@ public class GrammerSessionStudent {
     @JoinColumn(name = "grammer_session_id", nullable = false)
     private GrammerSession grammerSession;
 
+    public GrammerSessionStudent() {
+    }
+
     public Integer getId() {
         return id;
     }

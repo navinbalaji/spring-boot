@@ -25,6 +25,9 @@ public class OneOnOne {
     @Column(name = "no_of_slots")
     private Integer noOfSlots;
 
+    public OneOnOne() {
+    }
+
     public Integer getId() {
         return id;
     }

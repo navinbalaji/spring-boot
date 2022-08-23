@@ -18,6 +18,9 @@ public class UserLeave {
     @Column(name = "date")
     private LocalDate date;
 
+    public UserLeave() {
+    }
+
     public Integer getId() {
         return id;
     }

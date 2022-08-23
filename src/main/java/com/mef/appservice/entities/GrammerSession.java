@@ -28,6 +28,9 @@ public class GrammerSession {
     @Column(name = "transcript_url", length = 1000)
     private String transcriptUrl;
 
+    public GrammerSession() {
+    }
+
     public Integer getId() {
         return id;
     }

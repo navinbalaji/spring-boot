@@ -22,7 +22,10 @@ public class User {
     private Date modifiedAt;
     private int isActive;
 
-    public User( String userid, String password, String phone, Date createdAt, Date modifiedAt, int isActive) {
+    public User() {
+    }
+
+    public User(String userid, String password, String phone, Date createdAt, Date modifiedAt, int isActive) {
         this.userid = userid;
         this.password = password;
         this.phone = phone;

@@ -16,6 +16,9 @@ public class DailyLiveSessionStudent {
     @JoinColumn(name = "daily_live_id", nullable = false)
     private DailyLiveSession dailyLive;
 
+    public DailyLiveSessionStudent() {
+    }
+
     public Integer getId() {
         return id;
     }

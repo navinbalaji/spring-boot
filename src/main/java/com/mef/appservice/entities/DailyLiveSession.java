@@ -28,6 +28,9 @@ public class DailyLiveSession {
     @Column(name = "transcript_url", length = 1000)
     private String transcriptUrl;
 
+    public DailyLiveSession() {
+    }
+
     public Integer getId() {
         return id;
     }

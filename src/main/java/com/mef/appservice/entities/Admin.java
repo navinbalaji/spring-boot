@@ -54,5 +54,7 @@ public class Admin {
         this.userid = userid;
     }
 
+    public Admin() {
+    }
 }
 

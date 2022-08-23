@@ -2,6 +2,7 @@ package com.mef.appservice.controller;
 
 import com.mef.appservice.handler.StudentHandler;
 import com.mef.appservice.model.LeaveDetails;
+import com.mef.appservice.model.SessionDetails;
 import com.mef.appservice.model.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -27,7 +28,7 @@ public class StudentController {
 
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{studentId}")
     public ResponseEntity<User> getStudentDetails(@PathVariable long studentId){
         try{
             logger.info("getStudentDetails:"+studentId);
@@ -36,13 +37,22 @@ public class StudentController {
             return ResponseEntity.status(HttpStatus.ACCEPTED).body(user);
         }
         catch (Exception ex){
-            logger.error("GetLeave: Exception occured "+studentId+" --> "+ex.getMessage());
+            logger.error("getStudentDetails: Exception occured "+studentId+" --> "+ex.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
         }
     }
 
-    @GetMapping("/{id}/session")
-    public void getSessionDetails(@PathVariable long studentId){
-
+    @GetMapping("/{studentId}/sessionDetails")
+    public ResponseEntity<SessionDetails> getSessionDetails(@PathVariable long studentId){
+        try{
+            logger.info("getSessionDetails:"+studentId);
+            SessionDetails sessionDetails = studentHandler.getSessionDetails(studentId);
+            logger.info("Constructed  Response:"+sessionDetails.toString());
+            return ResponseEntity.status(HttpStatus.ACCEPTED).body(sessionDetails);
+        }
+        catch (Exception ex){
+            logger.error("getSessionDetails: Exception occured "+studentId+" --> "+ex.getMessage());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+        }
     }
 }

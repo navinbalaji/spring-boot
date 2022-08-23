@@ -30,6 +30,9 @@ public class Student {
     @JoinColumn(name = "userid", nullable = false)
     private User userid;
 
+    public Student() {
+    }
+
     public Integer getId() {
         return id;
     }
