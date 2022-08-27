@@ -1,44 +1,49 @@
 package com.mef.appservice.entities;
 
-import org.springframework.data.repository.CrudRepository;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.time.DateTimeException;
-import java.util.Date;
+import javax.persistence.*;
+import java.time.Instant;
+import java.time.LocalDate;
 
 @Entity
+@Table(name = "user")
 public class User {
-
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
+    private Integer id;
+
+    @Column(name = "userid")
     private String userid;
+
+    @Column(name = "password")
     private String password;
-    private String phone;
-    private Date createdAt;
-    private Date modifiedAt;
-    private int isActive;
 
-    public User() {
-    }
+    @Column(name = "mobile")
+    private String mobile;
 
-    public User(String userid, String password, String phone, Date createdAt, Date modifiedAt, int isActive) {
-        this.userid = userid;
-        this.password = password;
-        this.phone = phone;
-        this.createdAt = createdAt;
-        this.modifiedAt = modifiedAt;
-        this.isActive = isActive;
-    }
+    @Column(name = "dob")
+    private LocalDate dob;
 
-    public int getId() {
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "age")
+    private Integer age;
+
+    @Column(name = "created_at")
+    private Instant createdAt;
+
+    @Column(name = "modified_at")
+    private Instant modifiedAt;
+
+    @Column(name = "is_active")
+    private Integer isActive;
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -58,35 +63,36 @@ public class User {
         this.password = password;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getMobile() {
+        return mobile;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
     }
 
-    public Date getCreatedAt() {
+    public Instant getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(Instant createdAt) {
         this.createdAt = createdAt;
     }
 
-    public Date getModifiedAt() {
+    public Instant getModifiedAt() {
         return modifiedAt;
     }
 
-    public void setModifiedAt(Date modifiedAt) {
+    public void setModifiedAt(Instant modifiedAt) {
         this.modifiedAt = modifiedAt;
     }
 
-    public int getIsActive() {
+    public Integer getIsActive() {
         return isActive;
     }
 
-    public void setIsActive(int isActive) {
+    public void setIsActive(Integer isActive) {
         this.isActive = isActive;
     }
+
 }

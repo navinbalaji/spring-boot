@@ -1,16 +1,19 @@
 package com.mef.appservice.entities;
 
+import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.repository.CrudRepository;
 
 import javax.persistence.*;
+import java.util.UUID;
 
 @Entity
 @Table(name = "teacher")
 public class Teacher {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private Integer id;
+    @GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
+    @Column(name = "id", columnDefinition = "VARCHAR(255)",nullable = false)
+    private UUID id;
 
     @Column(name = "firstname")
     private String firstname;
@@ -28,11 +31,11 @@ public class Teacher {
     public Teacher() {
     }
 
-    public Integer getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

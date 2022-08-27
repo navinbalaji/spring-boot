@@ -45,7 +45,7 @@ public class StudentHandler {
                 UserDetails userDetails = new UserDetails();
                 userDetails.setAvatar("");
                 userDetails.setEmail(student.get().getUserid().getUserid());
-                userDetails.setPhone(student.get().getUserid().getPhone());
+                userDetails.setPhone(student.get().getUserid().getMobile());
                 userDetails.setName(student.get().getFirstname()+" "+student.get().getLastname());
                 user.setUserDetails(userDetails);
 

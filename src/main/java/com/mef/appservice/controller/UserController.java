@@ -1,6 +1,5 @@
 package com.mef.appservice.controller;
 
-import com.mef.appservice.entities.User;
 import com.mef.appservice.handler.UserHandler;
 import com.mef.appservice.model.LeaveDetails;
 import org.apache.logging.log4j.LogManager;
@@ -9,9 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Date;
-import java.util.List;
 
 
 @RestController

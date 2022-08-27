@@ -6,10 +6,13 @@ use mef_client;
 
 CREATE TABLE user
 (
-id int NOT NULL AUTO_INCREMENT,
+id varchar(255) NOT NULL,
 userid varchar(255),
 password varchar(255),
-phone varchar(255),
+email varchar(255),
+age int,
+dob DATE,
+mobile varchar(255),
 created_at DATETIME,
 modified_at DATETIME,
 is_active int,
@@ -18,7 +21,7 @@ PRIMARY KEY (id)
 
 CREATE TABLE student
 (
-id int NOT NULL AUTO_INCREMENT,
+id varchar(255) NOT NULL,
 firstname varchar(255),
 lastname varchar(255),
 data_of_joining DATE,
@@ -30,7 +33,7 @@ FOREIGN KEY (userid) REFERENCES user(id)
 
 CREATE TABLE teacher
 (
-id int NOT NULL AUTO_INCREMENT,
+id varchar(255) NOT NULL,
 firstname varchar(255),
 lastname varchar(255),
 userid int NOT NULL,

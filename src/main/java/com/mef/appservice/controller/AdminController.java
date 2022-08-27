@@ -27,7 +27,6 @@ public class AdminController {
     ResponseEntity<String> index() {
         try{
             logger.info("Enter admin page");
-            adminHandler.addUser(new User("1234","1111","8531002318",new Date(),new Date(),1));
         }
         catch (Exception ex){
         }
