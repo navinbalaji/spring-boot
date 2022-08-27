@@ -47,7 +47,7 @@ public class UserHandler {
     public LeaveDetails getLeaveDetails(long userId){
         LeaveDetails leaveDetails = new LeaveDetails();
         try{
-            List<UserLeave> userLeaves = userLeaveRepository.findByUserId(userId);
+            List<UserLeave> userLeaves = userLeaveRepository.findByUser(userRepository.findById((int)userId).get());
             leaveDetails.setId(userId);
             leaveDetails.setLeaveDates(userLeaves.stream().map(UserLeave::getDate).collect(Collectors.toList()));
             leaveDetails.setAllowedLeaves(5);
