@@ -5,10 +5,7 @@ import com.mef.appservice.entities.OneOnOneSlot;
 import com.mef.appservice.entities.Student;
 import com.mef.appservice.enumeration.MEFClassType;
 import com.mef.appservice.enumeration.PlanType;
-import com.mef.appservice.model.MEFClass;
-import com.mef.appservice.model.SessionDetails;
-import com.mef.appservice.model.User;
-import com.mef.appservice.model.UserDetails;
+import com.mef.appservice.model.*;
 import com.mef.appservice.repos.OneOnOneRepository;
 import com.mef.appservice.repos.OneOnOneSlotRepository;
 import com.mef.appservice.repos.StudentRepository;
@@ -82,5 +79,19 @@ public class StudentHandler {
        }
 
        return sessionDetails;
+   }
+
+
+   public ClassDetails getClassDetails(long studentId){
+       try{
+           //Optional<Student> student=studentRepository.findById((int)studentId);
+
+          // Optional<OneOnOne> o1 = oneOnOneRepository.findByStudent(student.get());
+          // Optional<List<OneOnOneSlot>> ls = oneOnOneSlotRepository.findByOneOnOne(o1.get());
+          
+           return new ClassDetails();
+       }catch(Exception e){
+           throw e;
+       }
    }
 }
